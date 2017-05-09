@@ -1,0 +1,53 @@
+<include file="public/head"/>
+
+<head>
+    <style>
+        .nickname {margin-top:1%;}
+        .top {margin-top:0.5%;}
+        .center {background:#8697b2 url(__PUBLIC__/admin/images/gf.jpg); color:#fff; font-size: 1.3em;}
+        .xinxi {text-align: center;}
+    </style>
+</head>
+
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head">
+        <strong class="icon-reorder"> 管理员信息</strong>
+    </div>
+    <div class="padding border-bottom">
+        <a class="button border-yellow" href="{:U('user/pass')}"><span class="icon-edit"></span> 修改密码</a>
+        <a class="button border-yellow" href="{:U('user/user_save')}"><span class="icon-edit"></span> 修改信息</a>
+    </div>
+    <div class="center padding border-bottom ">
+        <div class="xinxi" >
+            <?php
+         switch ($row['level'])
+         {
+        case 1:
+        echo '  <img src="__PUBLIC__/admin/images/chaoji.png" class="radius-circle rotate-hover" height="100" width="100px">';
+            break;
+            case 2:
+            echo ' <img src="__PUBLIC__/admin/images/putong.png" class="radius-circle rotate-hover" height="100" width="100px">';
+            break;
+            }
+            ?>
+
+            <div class="nickname">账号：{$row.username}</div>
+            <div class="top">身份：  <?php
+                 switch ($row['level'])
+                {
+                case 1:
+                echo ' 超级管理员';
+                break;
+                case 2:
+                echo ' 管理员>';
+                break;
+                }
+                ?>
+            </div>
+            <div class="top">手机号：{$row.numb}</div>
+            <div class="top">电子邮箱：{$row.mail}</div>
+        </div>
+    </div>
+</div>
+</body>

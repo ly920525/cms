@@ -1,0 +1,81 @@
+<include file="public/head"/>
+
+<head>
+    <title>二级产品</title>
+    <style>
+        .tips {color:#6F6F6F;}
+        .inputs {cursor:pointer;}
+    </style>
+</head>
+
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改二级产品</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="label">
+                <label>二级分类：</label>
+            </div>
+            <div class="field">
+                <select name="issuer" class="input w50 inputs">
+
+                    <volist name="sort" id="vo">
+                        <?php if($list['issuer']==$vo['title']){ ?>
+                        <option selected="selected" value="{$vo.id}">{$vo.title}</option>
+                        <?php }elseif($list['issuer']==$vo['title']){ ?>
+
+                        <?php }else{ ?>
+                        <option value="{$vo.id}">{$vo.title}</option>
+                        <?php } ?>
+                    </volist>
+                </select>
+                <div class="tips">（不选择新闻分类默认为未修改之前的值）</div>
+            </div>
+        </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{$list.title}" name="title" placeholder="请输入图片标题" data-validate="required:请输入图片标题" />
+          <div class="tips">（用于前端显示的标题）</div>
+        </div>
+      </div>
+
+        <div class="form-group">
+            <div class="label">
+                <label>图片：</label>
+            </div>
+            <div class="field">
+                <div class="img" id="img"><img width="15%" height="10%"  src="__PUBLIC__/Uploads/{$list.img}" /></div>
+                <input type="file" name="file" onchange="hai.preview(this)" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+                <div class="tips">图片尺寸：500*500</div>
+            </div>
+        </div>
+      <div class="form-group">
+        <div class="label">
+          <label>所属方法：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{$list.fang_fa}" name="fang_fa" placeholder="请输入所属方法" data-validate="required:请输入所属方法" />
+          <div class="tips">（U函数解析的URL或者外链）格式：index/index</div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-edit" type="submit"> 修改</button>
+            <button class="button bg-main icon-reply" onClick='javascript :history.back(-1);'> 返回</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="__PUBLIC__/admin/js/jq.js"></script>
+
+</body></html>

@@ -1,0 +1,65 @@
+/*==================================================================*/
+/* reset */
+*{margin:0px;padding:0px;font-family:"Microsoft Yahei";}
+body{width:100%;height:100%;}
+html{color:#333;background:#fff;}
+img{border:none;}
+em,strong{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+h1{font-size:18px;}
+h2{font-size:16px;}
+h3{font-size:14px;}
+h4, h5, h6{font-size:100%;}
+q:before,q:after{content:'';}
+button,input,select,textarea{font-size:100%;}
+input,button,textarea,select,optgroup,option{font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} 
+input{outline:none;}
+/* link */
+a{text-decoration:none;color:#333;*cursor:pointer;}
+a:hover{color:#8FC42E;}
+
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+.bold{font-weight:bold}
+.fontWeight{font-weight:normal;}
+.alignCen{text-align:center}
+.cursor{cursor:pointer;}
+.mar_auto{margin:0 auto;}
+.border_none{border:none !important;}
+/***********************/
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfix{zoom:1} 
+.box_style{width:100%;height:auto;}
+/*===========================end=======================================*/
+#goTopBtn {position: fixed;line-height:36px;width:36px;bottom:35px;height:36px;cursor:pointer;display:none;
+background:url("../images/back_to_top_white.gif");}
+
+/*分页*/
+div.jogger { 
+margin:20px 7px;padding:15px 2px;text-align:center;
+} 
+div.jogger a { 
+padding-right: 0.64em;padding-left: 0.64em;padding-bottom: 0.43em;
+margin: 2px; color: #666;padding-top: 0.5em; border:1px solid #ddd;
+background-color: #fff; text-decoration: none;border-radius:5px;
+} 
+div.jogger a:hover { 
+padding-right: 0.64em;padding-left: 0.64em;padding-bottom: 0.43em;
+margin: 2px; color: #fff; padding-top: 0.5em; background-color: #8FC42E 
+} 
+div.jogger a:active { 
+padding-right: 0.64em; padding-left: 0.64em; padding-bottom: 0.43em;
+margin: 2px; color: #fff; padding-top: 0.5em; background-color: #de1818 
+} 
+div.jogger span.current { 
+padding-right: 0.64em; padding-left:0.64em; padding-bottom: 0.43em;
+margin: 2px; color: #fff; padding-top: 0.5em; background-color: #8FC42E;border:1px solid #8FC42E;
+    border-radius:5px;
+} 
+div.jogger span.disabled { 
+display:none 
+} 

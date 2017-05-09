@@ -1,0 +1,50 @@
+<!--         底部导航star-->
+<div class="nav_wk">
+    <div class="nav_con">
+        <!--循环导航-->
+        <volist name="cat" id="vo">
+            <if condition="$vo['state'] eq '是'">
+                <a href="{:U($vo['fangfa'])}" >{$vo.title}</a>
+            </if>
+        </volist>
+        <!--循环导航结束-->
+        <!--<a href="index.php" class="nav_hover">首页</a>-->
+        <!--<a href="about.php">关于我们</a>-->
+        <!--<a href="product_list.php">产品中心</a>-->
+        <!--<a href="news_list.php">新闻中心</a>-->
+        <!--<a href="">资质荣誉</a>-->
+        <!--<a href="customer_case.php">客户案例</a>-->
+        <!--<a href="">人才招聘</a>-->
+        <!--<a href="">客户服务</a>-->
+        <!--<a href="">联系我们</a>-->
+        <!--<div class="clear"></div>-->
+    </div>
+</div>
+<!--         底部导航end-->
+<!--        底部star-->
+<div class="footer_wk">
+    <div class="footer_con">
+        <a href="" class="footer_logo left">
+            <img src="__PUBLIC__/Uploads/{$fi.web_logo}" alt="">
+        </a>
+        <!--<a href="" class="footer_logo left">-->
+            <!--<img src="__PUBLIC__/Home/images/f_logo.png" alt="">-->
+        <!--</a>-->
+        <div class="footer_r left">
+            <p>地址：{$finds.address}</p>
+            <p>手机：{$finds.phone} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：{$finds.telephone}</p>
+            <p>{$findss[0]}
+                <a href="">{$findss[1]}</a>
+            </p>
+            <!--<p>地址:东莞市南城区鸿福路</p>-->
+            <!--<p>手机:15906000000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话:15906000000</p>-->
+            <!--<p>Copyright © 2014源发通风 版权所有-->
+                <!--<a href="">技术支持:维登科技</a>-->
+            <!--</p>-->
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--        底部end-->
+<!--   返回顶部-->
+<div id="goTopBtn"></div>

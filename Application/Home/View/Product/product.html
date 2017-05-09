@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>产品中心</title>
+    <include file="Public/head" />
+</head>
+
+<body>
+    <div class="wk">
+        <!--        头部公共部分star-->
+        <include file="Public/header" />
+        <!--        头部公共部分end-->
+  <!--           内页横幅star-->  
+  <div class="ny_banner" style="background:url('__PUBLIC__/Home/images/banner.jpg') no-repeat center center"></div>
+  
+  <!--           内页横幅end--> 
+        <!--        首页产品区域star-->
+        <div class="pro_wk">
+            <div class="pro_content">
+                <div class="pro_con_l left">
+                    <div class="pro_con_title">
+                        <h4>产品中心</h4>
+                        <p>Product Center</p>
+                        <i></i>
+                    </div>
+                    <div class="pro_con_list">
+                        <!--循环列表标题-->
+                        <volist name="cata" id="vo">
+                            <div class="pro_list_1">
+                                <if condition="$vo['pid'] eq 0">
+                                    <div class="list_title">
+                                        <p>{$vo.title}</p>
+                                    </div>
+                                </if>
+                                <if condition="$vo['erji'] gt null ">
+                                    <if condition="$key eq 0 ">
+                                        <ul style="display:block;">
+                                            <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                                <li class="<?php if($vo['id']==$issuer){echo 'active';} ?>">
+                                                    <a href="{:U('Product/product',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                                </li>
+                                            </foreach>
+                                        </ul>
+                                      <else/>
+                                        <ul>
+                                            <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                                <li class="<?php if($vo['id']==$issuer){echo 'active';} ?>">
+                                                    <a href="{:U('Product/product',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                                </li>
+                                            </foreach>
+                                        </ul>
+                                    </if>
+                                </if>
+                             </div>
+                        </volist>
+                        <!--循环列表标题结束-->
+                        <!--<div class="pro_list_1">-->
+                            <!--<div class="list_title">-->
+                                <!--<p>产品名称2</p>-->
+                            <!--</div>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="pro_list_1">-->
+                            <!--<div class="list_title">-->
+                                <!--<p>产品名称3</p>-->
+                            <!--</div>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="pro_list_1">-->
+                            <!--<div class="list_title">-->
+                                <!--<p>产品名称4</p>-->
+                            <!--</div>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="pro_list_1">-->
+                            <!--<div class="list_title">-->
+                                <!--<p>产品名称5</p>-->
+                            <!--</div>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="pro_list_1">-->
+                            <!--<div class="list_title">-->
+                                <!--<p>产品名称8</p>-->
+                            <!--</div>-->
+                            <!--<ul>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                                <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="pro_con_r right">
+                    <div class="pro_con_r_title">
+                        <p class="left">产品中心</p>
+                        <span class="left">Product Center</span>
+                        <a href="" class="right"></a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="pro_con_r_show">
+                        <ul>
+                            <!--循环图片-->
+                            <volist name="lists" id="v">
+                                <li>
+                                    <a href="{:U('Product/product_details','id='.$v['id'])}">
+                                        <div class="pro_img_wk"><img src="__PUBLIC__/Uploads/{$v.img}" alt=""></div>
+                                        <p>{$v.title}</p>
+                                    </a>
+                                </li>
+                            </volist>
+                            <!--循环图片结束-->
+                            <!--<li>-->
+                                <!--<a href="product_details.php">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="">-->
+                                    <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                    <!--<p>产品名称</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="jogger">
+                            <span>{$page} </span>
+                            <!--<span class="disabled">&lt; </span>-->
+                            <!--<span class="current">1</span>-->
+                            <!--<a href="#">2</a>-->
+                            <!--<a href="#">3</a>-->
+                            <!--<a href="#">4</a>-->
+                            <!--<a href="#">5</a>-->
+                            <!--<a href="#">6</a>-->
+                            <!--<a href="#">7</a>...-->
+                            <!--<a href="#">12</a>-->
+                            <!--<a href="#">&gt; </a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <!--                分页-->
+
+            </div>
+        </div>
+        <!--        首页产品区域end-->
+        <!--        底部公共部分star-->
+        <include file="Public/foot" />
+        <!--        底部公共部分end-->
+    </div>
+    <script src="__PUBLIC__/Home/js/common.js"></script>
+</body>
+
+</html>

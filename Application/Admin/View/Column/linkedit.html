@@ -1,0 +1,62 @@
+<include file="Public/head"/>
+
+<head>
+    <title>增加内容</title>
+</head>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加友情链接:</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="" enctype="multipart/form-data">
+      <div class="form-group">
+        <div class="label">
+          <label>标题：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{:$data['title']}" name="title" placeholder="请输入标题" data-validate="required:请输入标题" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>友情链接：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{:$data['url']}" name="url" placeholder="请输入链接" data-validate="required:请输入链接" />
+          <div class="tips">格式:index/index</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="label">
+          <label>排序：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" value="{:$data['status']}" name="status" placeholder="请输入排序" data-validate="required:排序只能是数字" />
+          <div class="tips"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="label">
+          <label>图片：</label>
+        </div>
+        <div class="field">
+          <input type="file" name="file" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <div class="tipss">图片尺寸：500*500</div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-edit" type="submit"> 修改</button>
+          <button class="button bg-main icon-reply" onClick='javascript :history.back(-1);'> 返回</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body></html>

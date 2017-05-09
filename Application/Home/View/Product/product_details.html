@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>产品详情</title>
+    <include file="Public/head" />
+</head>
+
+<body>
+<div class="wk">
+    <!--        头部公共部分star-->
+    <include file="Public/header" />
+    <!--        头部公共部分end-->
+    <!--           内页横幅star-->
+    <div class="ny_banner" style="background:url('__PUBLIC__/Home/images/banner.jpg') no-repeat center center"></div>
+
+    <!--           内页横幅end-->
+    <!--        首页产品区域star-->
+    <div class="pro_wk">
+        <div class="pro_content">
+            <div class="pro_con_l left">
+                <div class="pro_con_title">
+                    <h4>产品中心</h4>
+                    <p>Product Center</p>
+                    <i></i>
+                </div>
+                <div class="pro_con_list">
+                    <!--循环列表标题-->
+                    <volist name="cata" id="vo">
+                        <div class="pro_list_1">
+                            <if condition="$vo['pid'] eq 0">
+                                <div class="list_title">
+                                    <p>{$vo.title}</p>
+                                </div>
+                            </if>
+                            <if condition="$vo['erji'] gt null ">
+                                <if condition="$key eq 0 ">
+                                    <ul style="display:block;">
+                                        <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                            <li class="<?php if($vo['id']==$issuer){echo 'active';} ?>">
+                                             <a href="{:U('Product/product',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                            </li>
+                                        </foreach>
+                                    </ul>
+                                    <else/>
+                                    <ul>
+                                        <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                            <li class="<?php if($vo['id']==$issuer){echo 'active';} ?>">
+                                                <a href="{:U('Product/product',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                            </li>
+                                        </foreach>
+                                    </ul>
+                                </if>
+                            </if>
+                        </div>
+                    </volist>
+                    <!--循环列表标题结束-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称1</p>-->
+                        <!--</div>-->
+                        <!--<ul style="display:block;">-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称2</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称3</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称4</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称5</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称6</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称7</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称8</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称9</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+            <div class="pro_con_r right">
+                <div class="pro_con_r_title">
+                    <p class="left">产品中心</p>
+                    <span class="left">Product Center</span>
+                    <a href="" class="right"></a>
+                    <div class="clear"></div>
+                </div>
+                <div class="contact_l">
+                    <div class="pro_details">
+                        <div class="pro_xiangxi">
+                            <div class="ny_product_txt">
+                                <h3>{$list.name}</h3>
+                                <p>{$list.content}</p>
+                                <input type="submit" class="online_dg" value="在线咨询">
+                                <!--<h3>嵌入式AGV</h3>-->
+                                <!--<p>超低型嵌入式AGV,对现有推车稍作改动，追加自动退挂机构即可实现自动退挂与搬运。可根据需求实现单车自主路线选择、调度系统远程路径分配等功能，投资小，见效快入式AGV,对现有推车稍作改动，追加自动退挂机构即可实现自动退挂与搬运。可根据需求实现单车自主路线选择、调度系统远程路径分配等功能，投资小，见效快。</p>-->
+                                <!--<input type="submit" class="online_dg" value="在线咨询">-->
+                            </div>
+                            <div class="ny_product_box">
+                                <volist name="lists" id="v" key="key">
+                                    <if condition="$key eq 1">
+                                        <div class="ny_product_sml">
+                                            <img src="__PUBLIC__/Uploads/{$v.imgs}" />
+                                            <span class="product_move"></span>
+                                            <span class="product_shade"></span>
+                                        </div>
+                                        <else/>
+                                        <div class="ny_product_big">
+                                            <img src="__PUBLIC__/Uploads/{$v.imgs}" />
+                                        </div>
+                                    </if>
+                                </volist>
+                                <!--<div class="ny_product_sml">-->
+                                    <!--<img src="__PUBLIC__/Home/images/banner.jpg" />-->
+                                    <!--<span class="product_move"></span>-->
+                                    <!--<span class="product_shade"></span>-->
+                                <!--</div>-->
+                                <!--<div class="ny_product_big">-->
+                                    <!--<img src="__PUBLIC__/Home/images/banner.jpg" />-->
+                                <!--</div>-->
+                                <!--<div class="ny_product_big">-->
+                                    <!--<img src="__PUBLIC__/Home/images/banner.jpg" />-->
+                                <!--</div>-->
+                            </div>
+                            <div style="clear:both"></div>
+                            <div class="product_img_choose">
+                                <ul>
+                                    <volist name="lists" id="v" key="key">
+                                        <if condition="$key eq 1">
+                                            <li class="choose_style">
+                                                <img src="__PUBLIC__/Uploads/{$v.imgs}" />
+                                            </li>
+                                            <else/>
+                                            <li>
+                                                <img src="__PUBLIC__/Uploads/{$v.imgs}" />
+                                            </li>
+                                        </if>
+                                    </volist>
+                                    <!--<li class="choose_style">-->
+                                        <!--<img src="__PUBLIC__/Home/images/banner.jpg" />-->
+                                    <!--</li>-->
+                                    <!--<li>-->
+                                        <!--<img src="__PUBLIC__/Home/images/str1.jpg" />-->
+                                    <!--</li>-->
+                                    <!--<li>-->
+                                        <!--<img src="__PUBLIC__/Home/images/str1.jpg" />-->
+                                    <!--</li>-->
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="product_xiang">
+                                <ul>
+                                    <li>
+                                        产品概述
+                                    </li>
+                                </ul>
+                                <p></p>
+                            </div>
+                            <!--调用产品介绍-->
+                            <?php echo htmlspecialchars_decode($list['introduction']); ?>
+                            <!--调用产品介绍结束-->
+                            <!--<div class="product_txt">-->
+                                <!--<p>mart功能-->
+                                    <!--<br /> · Smart侦测：10项行为分析,4项异常侦测,2项识别检测,1项统计功能-->
+                                    <!--<br /> · Smart录像：支持断网续传功能保证录像不丢失，配合Smart NVR/SD卡实现事件录像的智能后检索、分析和浓缩播放-->
+                                    <!--<br /> · Smart编码：支持低码率、低延时、ROI感兴趣区域增强编码、SVC自适应编码技术-->
+                                    <!--<br /> · Smart控制：ABF（-A可选）、P-Iris（-P可选）-->
+                                    <!--<br /> 图像相关-->
+                                    <!--<br /> · 最高分辨率可达600万像素（3072×2048）,并在此分辨率下可输出25fps实时图像-->
+                                    <!--<br /> · 支持走廊模式，增加纵向狭长环境下监控区域-->
+                                    <!--<br /> · 支持区域裁剪，小带宽看清大细节-->
+                                    <!--<br /> · 码流平滑设置，适应不同场景下对图像质量、流畅性的不同要-->
+                                    <!--<br /> · 码流平滑设置，适应不同场景下对图像质量、流畅性的不同要求-->
+                                    <!--<br /> · 支持H.264/MJPEG视频压缩算法，支持多级别视频质量配置、H.264编码复杂度Baseline/Main/High Profile-->
+                                    <!--<br /> · 支持GBK字库，支持更多汉字及生僻字叠加，支持OSD颜色自选-->
+                                    <!--<br /> · 支持透雾、强光抑制-->
+                                    <!--<br /> 系统功能-->
+                                    <!--<br /> · 支持ONVIF(profile S/profile G)、CGI、PSIA、ISAPI、GB/T28181和EHOME协议接入-->
+                                    <!--<br /> · 支持三码流技术，双路高清，支持同时20路取流-->
+                                    <!--<br /> · 支持防雷、防浪涌、防静电-->
+                                    <!--<br /> · 支持宽压输入-->
+                                    <!--<br /> 接口功能-->
+                                    <!--<br />-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--        首页产品区域end-->
+    <!--        底部公共部分star-->
+    <include file="Public/foot" />
+    <!--        底部公共部分end-->
+</div>
+<script>
+    $(".product_shade").hover(function() {
+        $(".product_move").show();
+        $(".ny_product_big").show();
+    }, function() {
+        $(".product_move").hide();
+        $(".ny_product_big").hide();
+    })
+
+    $(".product_shade").mousemove(function(e) {
+        var moveX = e.clientX; //获取鼠标的X轴
+        var moveY = e.clientY; //获取鼠标的Y轴
+        var scroT = $(document).scrollTop();
+        var boxLeft = $(".ny_product_box").offset().left; //获取外盒子到左边框的距离
+        var boxTop = $(".ny_product_box").offset().top; //获取外盒子到上边框的距离
+        var moveW = $(".product_move").width() / 2; //小滑块宽度
+        var moveH = $(".product_move").height() / 2; //小滑块高度
+        var moveLeft = moveX - boxLeft - moveW;
+        var moveTop = scroT + moveY - boxTop - moveH;
+        //                判断.不让移动块移出
+        if (moveTop < 0) {
+            moveTop = 0;
+        } else if (moveTop > ($(".product_shade").height() - moveH * 2)) {
+            moveTop = $(".product_shade").height() - moveH * 2;
+        }
+
+        if (moveLeft < 0) {
+            moveLeft = 0;
+        } else if (moveLeft > ($(".product_shade").width() - moveW * 2)) {
+            moveLeft = $(".product_shade").width() - moveW * 2;
+        }
+        $(".product_move").css({
+            left: moveLeft,
+            top: moveTop
+        });
+
+        //                透明快滑动的最大高度和宽度
+        var hd_w = $(".product_shade").width() - moveW * 2;
+        var hd_h = $(".product_shade").height() - moveH * 2;
+
+        //                滑动高度和宽度比例
+        var ratioW = moveLeft / hd_w;
+        var ratioY = moveTop / hd_h;
+        //                alert(ratioW+"--"+ratioY);
+        var big_left = ($(".ny_product_big img").width() - $(".ny_product_big").width()) * ratioW;
+        var big_top = ($(".ny_product_big img").height() - $(".ny_product_big").height()) * ratioY;
+        //                alert(big_left+"--"+big_top);
+        $(".ny_product_big img").css({
+            left: -big_left,
+            top: -big_top
+        });
+    })
+
+    /*小图选择区域*/
+    $(".product_img_choose ul li").click(function() {
+        $(this).addClass("choose_style").siblings().removeClass("choose_style");
+        var ImgSrc = $(this).children("img").attr("src");
+        $(".ny_product_sml img").attr("src", ImgSrc);
+        $(".ny_product_big img").attr("src", ImgSrc);
+    })
+
+</script>
+<script src="__PUBLIC__/Home/js/common.js"></script>
+</body>
+
+</html>

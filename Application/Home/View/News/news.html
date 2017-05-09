@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>新闻中心</title>
+    <include file="Public/head" />
+    <style>
+        .active, .active a {background:#ecebeb !important; color:#8FC42E !important;}
+    </style>
+</head>
+
+<body>
+<div class="wk">
+    <!--        头部公共部分star-->
+    <include file="Public/header" />
+    <!--        头部公共部分end-->
+    <!--           内页横幅star-->
+    <div class="ny_banner" style="background:url('__PUBLIC__/Home/images/banner.jpg') no-repeat center center"></div>
+
+    <!--           内页横幅end-->
+    <!--        首页产品区域star-->
+    <div class="pro_wk">
+        <div class="pro_content">
+            <div class="pro_con_l left">
+                <div class="pro_con_title">
+                    <h4>新闻中心</h4>
+                    <p>News Center</p>
+                    <i></i>
+                </div>
+                <div class="pro_con_list">
+                    <!--循环列表标题-->
+                    <volist name="data" id="vo">
+                        <div class="news_list_1 ">
+                            <div class="list_title <?php if($vo['sort']==$issuer){echo 'active';} ?>">
+                                <p>
+                                    <a href="{:U('/Home/News/news',array('issuer'=>$vo['sort']))}">{$vo.type}</a>
+                                </p>
+                            </div>
+                            <ul>
+                            </ul>
+                        </div>
+                    </volist>
+                    <!--循环列表标题结束-->
+                    <!--<div class="news_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p><a href="">公司新闻</a></p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="news_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p><a href="">行业动态</a></p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="pro_con_r right">
+                <div class="pro_con_r_title">
+                    <p class="left">新闻中心</p>
+                    <span class="left">News Center</span>
+                    <a href="" class="right"></a>
+                    <div class="clear"></div>
+                </div>
+                <div class="news_list_ny">
+                    <ul>
+                        <!--循环新闻列表-->
+                        <volist name="lists" id="v">
+                            <li>
+                                <a href="{:U('News/news_details','id='.$v['id'])}">
+                                    <p class="left">{$v.title}</p>
+                                    <span class="right">{$v.time}</span>
+                                    <div class="clear"></div>
+                                </a>
+                            </li>
+                        </volist>
+                        <!--循环新闻列表结束-->
+                        <!--<li>-->
+                            <!--<a href="{:U('News/news_details')}">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="{:U('News/news_details')}">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="{:U('News/news_details')}">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="{:U('News/news_details')}">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="{:U('News/news_details')}">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<p class="left">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</p>-->
+                                <!--<span class="right">2017-01-01</span>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <!--                分页-->
+            <div class="jogger">
+                <!--调用分页-->
+                        {$page}
+                <!--调用分页结束-->
+                <!--<span class="disabled">&lt; </span>-->
+                <!--<span class="current">1</span>-->
+                <!--<a href="#">2</a>-->
+                <!--<a href="#">3</a>-->
+                <!--<a href="#">4</a>-->
+                <!--<a href="#">5</a>-->
+                <!--<a href="#">6</a>-->
+                <!--<a href="#">7</a>...-->
+                <!--<a href="#">12</a>-->
+                <!--<a href="#">&gt; </a>-->
+            </div>
+        </div>
+    </div>
+    <!--        首页产品区域end-->
+    <!--        底部公共部分star-->
+    <include file="Public/foot" />
+    <!--        底部公共部分end-->
+</div>
+<script src="__PUBLIC__/Home/js/common.js"></script>
+</body>
+
+</html>

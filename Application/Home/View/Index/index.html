@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/common.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/style.css">
+    <script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<div class="wk">
+    <!--        头部公共部分star-->
+    <include file="Public/header" />
+    <!--        头部公共部分end-->
+    <!--   横幅star-->
+    <div class="slider" id="slider">
+        <div class="slider-inner">
+
+            <volist name="data" id="vo">
+                <if condition="$vo['state'] eq '是'">
+                    <div class="item">
+                        <img class="img" style="background:url('__PUBLIC__/Uploads/{$vo.img}')">
+                    </div>
+                </if>
+            </volist>
+
+            <!--<div class="item">-->
+                <!--<img class="img" style="background:url('__PUBLIC__/Home/images/banner.jpg')">-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img class="img" style="background:url('__PUBLIC__/Home/images/banner.jpg')">-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img class="img" style="background:url('__PUBLIC__/Home/images/banner.jpg')">-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--   横幅end-->
+    <!--        首页产品区域star-->
+    <div class="pro_wk">
+        <div class="pro_content">
+            <div class="pro_con_l left">
+                <div class="pro_con_title">
+                    <h4>产品中心</h4>
+                    <p>Product Center</p>
+                    <i></i>
+                </div>
+                <div class="pro_con_list">
+                    <!--循环列表标题-->
+                    <volist name="cata" id="vo">
+                        <div class="pro_list_1">
+                            <if condition="$vo['pid'] eq 0">
+                                <div class="list_title">
+                                    <p>{$vo.title}</p>
+                                </div>
+                            </if>
+                            <if condition="$vo['erji'] gt null ">
+                                <if condition="$key eq 0 ">
+                                    <ul style="display:block;">
+                                        <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                            <li class="">
+                                                <a href="{:U('Index/index',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                            </li>
+                                        </foreach>
+                                    </ul>
+                                    <else/>
+                                    <ul>
+                                        <foreach name="cata[$key]['erji']" key="keys" item="v">
+                                            <li class="">
+                                                <a href="{:U('Index/index',array('issuer'=>$v['id']))}">{$v.title}</a>
+                                            </li>
+                                        </foreach>
+                                    </ul>
+                                </if>
+                            </if>
+                        </div>
+                    </volist>
+                    <!--循环列表标题结束-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称1</p>-->
+                        <!--</div>-->
+                        <!--<ul style="display:block;">-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称2</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称3</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称4</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称5</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称6</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称7</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称8</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="pro_list_1">-->
+                        <!--<div class="list_title">-->
+                            <!--<p>产品名称9</p>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                            <!--<li><a href="">二级分类产品名称</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="pro_con_r right">
+                <div class="pro_con_r_title">
+                    <p class="left">推荐产品</p>
+                    <span class="left">Recommended products</span>
+                    <a href="" class="right"></a>
+                    <div class="clear"></div>
+                </div>
+                <div class="pro_con_r_show">
+                    <ul>
+                        <!--循环图片-->
+                        <volist name="listss" id="v">
+                            <li>
+                                <a href="{:U('Product/product_details','id='.$v['id'])}">
+                                    <div class="pro_img_wk"><img src="__PUBLIC__/Uploads/{$v.img}" alt=""></div>
+                                    <p>{$v.title}</p>
+                                </a>
+                            </li>
+                        </volist>
+                        <!--循环图片结束-->
+                        <!--<li>-->
+                            <!--<a href="product_details.php">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="product_details.php">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="product_details.php">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="pro_img_wk"><img src="__PUBLIC__/Home/images/pro.jpg" alt=""></div>-->
+                                <!--<p>产品名称</p>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--        首页产品区域end-->
+    <!--   广告区域star-->
+    <div class="adver" style="background:url('__PUBLIC__/Home/images/gg.jpg') no-repeat center center;"></div>
+    <!--    广告区域end-->
+    <!--   优势star-->
+    <div class="advantage">
+        <div class="advantage_top">
+            <h5>源发通风<i>四大优势</i></h5>
+            <p>真诚为客户服务,产品质量优质有保证</p>
+        </div>
+        <div class="advantage_bot">
+            <ul>
+                <volist name="sele" id="vo">
+                    <li>
+                        <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter top over 1s after 0.3s">
+                        <p class="block block-1x block-orange" data-scroll-reveal="enter left">{$vo.title}</p>
+                        <span class="block block-1x block-orange" data-scroll-reveal="enter left">{$vo.describe}</span>
+                    </li>
+                </volist>
+                <!--<li>-->
+                    <!--<img src="__PUBLIC__/Home/images/a1.png" alt="" class="block" data-scroll-reveal="enter top over 1s after 0.3s">-->
+                    <!--<p class="block block-1x block-orange" data-scroll-reveal="enter left">优势标题</p>-->
+                    <!--<span class="block block-1x block-orange" data-scroll-reveal="enter left">产品质量优质有保证<br />真诚为客户服务</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<img src="__PUBLIC__/Home/images/a2.png" alt="" class="block" data-scroll-reveal="enter top over 1s after 0.5s">-->
+                    <!--<p class="block block-1x block-orange" data-scroll-reveal="enter left">优势标题</p>-->
+                    <!--<span class="block block-1x block-orange" data-scroll-reveal="enter left">产品质量优质有保证<br />真诚为客户服务</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<img src="__PUBLIC__/Home/images/a3.png" alt="" class="block" data-scroll-reveal="enter top over 1s after 0.7s">-->
+                    <!--<p class="block block-1x block-orange" data-scroll-reveal="enter left">优势标题</p>-->
+                    <!--<span class="block block-1x block-orange" data-scroll-reveal="enter left">产品质量优质有保证<br />真诚为客户服务</span>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<img src="__PUBLIC__/Home/images/a4.png" alt="" class="block" data-scroll-reveal="enter top over 1s after 0.9s">-->
+                    <!--<p class="block block-1x block-orange" data-scroll-reveal="enter left">优势标题</p>-->
+                    <!--<span class="block block-1x block-orange" data-scroll-reveal="enter left">产品质量优质有保证<br />真诚为客户服务</span>-->
+                <!--</li>-->
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <!--   优势end-->
+    <!--        源发实力图片区域star-->
+    <div class="strength_wk">
+        <div class="strength_con">
+            <div class="strength_top">
+                <volist name="selec" id="vo" key="k">
+                    <if condition="$k eq 1">
+                        <div class="strength_top_l left">
+                            <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter left">
+                        </div>
+                        <elseif condition="($k gt 1) and ($k lt 4)" />
+                        <div class="strength_top_r right">
+                            <if condition="$k eq 2">
+                                <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="img1 block" data-scroll-reveal="enter top over 0.5s and move 200px after 0.5s">
+                                <elseif condition="$k eq 3" />
+                                <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="img2 block" data-scroll-reveal="enter top over 0.8s and move 200px after 0.7s">
+                            </if>
+                        </div>
+                    </if>
+                </volist>
+                <div class="clear"></div>
+            </div>
+            <div class="strength_bot">
+                <volist name="selec" id="vo" key="key">
+                    <if condition="$key eq 4">
+                        <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.3s">
+                        <elseif condition="$key eq 5"/>
+                        <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.5s">
+                        <elseif condition="$key eq 6"/>
+                        <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.7s">
+                        <elseif condition="$key eq 7"/>
+                        <img src="__PUBLIC__/Uploads/{$vo.img}" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.9s">
+                    </if>
+                </volist>
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.3s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.5s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.7s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.9s">-->
+            </div>
+            <!--<div class="strength_top">-->
+                <!--<div class="strength_top_l left">-->
+                    <!--<img src="__PUBLIC__/Home/images/str1.jpg" alt="" class="block" data-scroll-reveal="enter left">-->
+                <!--</div>-->
+                <!--<div class="strength_top_r right">-->
+                    <!--<img src="__PUBLIC__/Home/images/str2.jpg" alt="" class="img1 block" data-scroll-reveal="enter top over 0.5s and move 200px after 0.5s">-->
+                    <!--<img src="__PUBLIC__/Home/images/str3.jpg" alt="" class="img2 block" data-scroll-reveal="enter top over 0.8s and move 200px after 0.7s">-->
+                <!--</div>-->
+                <!--<div class="clear"></div>-->
+            <!--</div>-->
+            <!--<div class="strength_bot">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.3s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.5s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.7s">-->
+                <!--<img src="__PUBLIC__/Home/images/str4.jpg" alt="" class="block" data-scroll-reveal="enter bottom over 1s and move 100px after 0.9s">-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--        源发实力图片区域end-->
+    <!--       客户案例star-->
+    <div class="case_wk">
+        <div class="case_con">
+            <div class="advantage_top">
+                <h5>源发通风<i>客户案例</i></h5>
+                <p>真诚为客户服务,产品质量优质有保证</p>
+            </div>
+            <div class="case_list">
+                <ul>
+                    <!--循环客户案例-->
+                    <volist name="lists" id="vo">
+                        <li>
+                            <a href="{:U('Cases/cases')}">
+                                <img src="__PUBLIC__/Uploads/{$vo.img}" alt="">
+                                <p>{$vo.title}</p>
+                            </a>
+                        </li>
+                    </volist>
+                    <!--循环客户案例结束-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="">-->
+                            <!--<img src="__PUBLIC__/Home/images/caseimg.jpg" alt="">-->
+                            <!--<p>客户案例</p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--       客户案例end-->
+    <!--        新闻star-->
+    <div class="news_wk">
+        <div class="message_con">
+            <div class="honor left">
+                <div class="title_show">
+                    <h3>荣誉资质</h3>
+                    <p>Honor Qualifications</p>
+                    <a href="{:U('Honor/honor')}">MORE +</a>
+                </div>
+                <div class="honor_con">
+                    <!--循环荣誉资质-->
+                    <volist name="list" id="vo">
+                        <a href="{:U('Honor/honor')}">
+                            <img src="__PUBLIC__/Uploads/{$vo.img}" alt="">
+                            <p>{$vo.title}</p>
+                        </a>
+                    </volist>
+                    <!--循环荣誉资质结束-->
+                    <!--<a href="">-->
+                        <!--<img src="__PUBLIC__/Home/images/ry.jpg" alt="">-->
+                        <!--<p>荣誉资质</p>-->
+                    <!--</a>-->
+                    <!--<a href="">-->
+                        <!--<img src="__PUBLIC__/Home/images/ry.jpg" alt="">-->
+                        <!--<p>荣誉资质</p>-->
+                    <!--</a>-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="news right">
+                <div class="title_show">
+                    <h3>公司新闻</h3>
+                    <p>Company news</p>
+                    <a href="{:U('News/news')}">MORE +</a>
+                </div>
+                <div class="news_con">
+                    <ul>
+                        <volist name="lis" id="vo">
+                            <li>
+                                <a href="{:U('News/news_details','id='.$vo['id'])}">
+                                    <div class="news_time left">
+                                        <p>{$vo.time}</p>
+                                    </div>
+                                    <div class="news_text left">
+                                        <h5>{$vo.title}</h5>
+                                        <p>{$vo.describe}</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </a>
+                            </li>
+                        </volist>
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="news_time left">-->
+                                    <!--<p>2017</p>-->
+                                    <!--<p>01/02</p>-->
+                                <!--</div>-->
+                                <!--<div class="news_text left">-->
+                                    <!--<h5>新闻标题新闻标题新闻标题</h5>-->
+                                    <!--<p>新闻简短描述新闻简短描述新闻简短描述新闻简短描述</p>-->
+                                <!--</div>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="news_time left">-->
+                                    <!--<p>2017</p>-->
+                                    <!--<p>01/02</p>-->
+                                <!--</div>-->
+                                <!--<div class="news_text left">-->
+                                    <!--<h5>新闻标题新闻标题新闻标题</h5>-->
+                                    <!--<p>新闻简短描述新闻简短描述新闻简短描述新闻简短描述</p>-->
+                                <!--</div>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="">-->
+                                <!--<div class="news_time left">-->
+                                    <!--<p>2017</p>-->
+                                    <!--<p>01/02</p>-->
+                                <!--</div>-->
+                                <!--<div class="news_text left">-->
+                                    <!--<h5>新闻标题新闻标题新闻标题</h5>-->
+                                    <!--<p>新闻简短描述新闻简短描述新闻简短描述新闻简短描述</p>-->
+                                <!--</div>-->
+                                <!--<div class="clear"></div>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--   新闻end-->
+    <!--        底部公共部分star-->
+    <include file="Public/foot" />
+    <!--        底部公共部分end-->
+</div>
+<script src="__PUBLIC__/Home/js/scrollReveal.js"></script>
+<script>
+    (function() {
+        window.scrollReveal = new scrollReveal({
+            reset: true,
+            move: '50px'
+        });
+    })();
+
+</script>
+<script src="__PUBLIC__/Home/js/common.js"></script>
+</body>
+
+</html>

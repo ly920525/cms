@@ -1,0 +1,88 @@
+<include file="public/head"/>
+<form method="post" class="form-ajax"   enctype="multipart/form-data">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 留言管理</strong></div>
+    <div class="padding border-bottom">
+      <ul class="search">
+        <li>
+          <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
+          <button type="submit" class="button border-red" onclick="DelSelect()"><span class="icon-trash-o"></span> 批量删除</button>
+        </li>
+      </ul>
+    </div>
+    <table class="table table-hover text-center" id="tb1">
+      <tr>
+        <th width="120">ID</th>
+        <th>姓名</th>       
+        <th>电话</th>
+        <th>邮箱</th>
+        <th>其他</th>
+        <th width="25%">内容</th>
+         <th width="120">留言时间</th>
+        <th>操作</th>       
+      </tr>
+        <volist name="list" id="message">
+        <tr>
+          <td><input type="checkbox" name="id[]" value="{$message.id}" />
+              {$message.id}</td>
+          <td>{$message.name}</td>
+          <td>{$message.phone}</td>
+          <td></td>
+           <td></td>
+          <td>{$message.content}</td>
+          <td>{$message.time}</td>
+          <td>
+              <div class="button-group">
+                  <a class="button border-red" href="{:U('message/delete?id='.$message['id'])}" onclick="del()"><span class="icon-trash-o"></span> 删除</a>
+              </div>
+          </td>
+        </tr>
+        </volist>
+      <tr>
+        <td colspan="8"><div class="pagelist"> {$page} </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+<script type="text/javascript">
+    //单个删除
+function del(id){
+	if(confirm("您确定要删除吗?")){
+
+    }
+
+}
+
+    //全选
+$("#checkall").click(function(){ 
+  $("input[name='id[]']").each(function(){
+	  if (this.checked) {
+		  this.checked = false;
+	  }
+	  else {
+		  this.checked = true;
+	  }
+  });
+})
+//批量删除
+function DelSelect(){
+    var Checkbox=false;
+    $("input[name='id[]']").each(function(){
+        if (this.checked==true) {
+            Checkbox=true;
+        }
+    });
+    if (Checkbox){
+        var t=confirm("您确认要删除选中的内容吗？");
+        if (t==false) return false;
+        $("#listform").submit();
+    }
+    else{
+        alert("请选择您要删除的内容!");
+        return false;
+    }
+}
+
+
+</script>
+</body></html>

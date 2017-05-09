@@ -1,0 +1,60 @@
+<div class="head_top_wk">
+    <div class="head_top_con">
+        <p class="head_top_l left">{$fi.welcome}</p>
+        <!--<p class="head_top_l left">源发通风公司网站欢迎您!</p>-->
+        <div class="head_top_r right">
+            <a href="">收藏本站</a>
+            <span>|</span>
+            <a href="{:U('Contact/contact')}">联系我们</a>
+            <span>|</span>
+            <a href="{:U('contact/contact#baidumap')}">网站地图</a>
+            <span>|</span>
+            <a href="">在线留言</a>
+        </div>
+    </div>
+</div>
+<div class="head_infor_wk">
+    <div class="head_infor_con">
+        <div class="head_infor_logo left">
+            <a href="" class="logo left">
+                <img src="__PUBLIC__/Uploads/{$fi.web_logo}" alt="">
+            </a>
+            <!--<a href="" class="logo left">-->
+                <!--<img src="__PUBLIC__/Home/images/logo.png" alt="">-->
+            <!--</a>-->
+            <div class="head_infor_txt left">
+                <h2>{$fi.keyword}</h2>
+                <p>{$fi.web_miaoshu}</p>
+                <!--<h2>源发通风 争做第一</h2>-->
+                <!--<p>真诚为客户服务 产品质量优质有保证</p>-->
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="head_infor_tel">
+            <p>全国服务热线:</p>
+            <span>{$finds.hotline}</span>
+            <!--<p>全国服务热线:</p>-->
+            <!--<span>400-0000-000</span>-->
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--        导航-->
+<div class="nav_wk">
+    <div class="nav_con">
+        <!--循环导航-->
+        <volist name="cat" id="vo">
+            <if condition="$vo['state'] eq '是'">
+                <a href="{:U($vo['fangfa'])}" >{$vo.title}</a>
+            </if>
+        </volist>
+        <!--循环导航结束-->
+        <!--<a href="{:U('Index/index')}" class="nav_hover">首页</a>-->
+        <!--<a href="{:U('About/about')}">关于我们</a>-->
+        <!--<a href="">资质荣誉</a>-->
+        <!--<a href="{:U('News/news')}">新闻中心</a>-->
+        <!--<a href="{:U('Cases/cases')}">工程案例</a>-->
+        <!--<a href="">联系我们</a>-->
+        <!--<div class="clear"></div>-->
+    </div>
+</div>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>联系我们</title>
+    <include file="Public/head" />
+    <style>
+        .contact_text {font-size:18px; line-height:40px;}
+    </style>
+</head>
+
+<body>
+<div class="wk">
+    <!--        头部公共部分star-->
+    <include file="Public/header" />
+    <!--        头部公共部分end-->
+    <!--           内页横幅star-->
+    <div class="ny_banner" style="background:url('__PUBLIC__/Home/images/banner.jpg') no-repeat center center"></div>
+
+    <!--           内页横幅end-->
+    <!--        首页产品区域star-->
+    <div class="pro_wk">
+        <div class="pro_content">
+            <div class="pro_con_l left">
+                <div class="pro_con_title">
+                    <h4>联系我们</h4>
+                    <p>About Us</p>
+                    <i></i>
+                </div>
+                <div class="pro_con_list">
+                    <div class="news_list_1">
+                        <div class="list_title">
+                            <p><a href="">联系我们</a></p>
+                        </div>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pro_con_r right">
+                <div class="pro_con_r_title">
+                    <p class="left">联系我们</p>
+                    <span class="left">About Us</span>
+                    <a href="" class="right"></a>
+                    <div class="clear"></div>
+                </div>
+                <div class="news_details">
+                    <div class="contact_l left">
+                        <div class="news_details">
+                            <!--
+                                                            <div class="details_title">
+                                                                <h4>2016年我国工业发展前景：智能制造将迎来黄金期</h4>
+                                                                <p>发布来源：创智科技 发布时间：2014-03-15</p>
+                                                            </div>
+                            -->
+
+                            <!--<?php echo htmlspecialchars_decode($data['content']); ?>-->
+
+                            <div class="details_txt">
+                                <div class="contact">
+                                    <div class="contact_text">
+                                        <p class="left">
+                                            公司名称：
+                                        </p>
+                                            <span class="left">
+                                                {$finds.title}
+                                            </span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="contact_text">
+                                        <p class="left">
+                                            联&nbsp;系&nbsp;&nbsp;人：
+                                        </p>
+                                            <span class="left">
+                                                {$finds.name}
+                                            </span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="contact_text">
+                                        <p class="left">
+                                            公司电话：
+                                        </p>
+                                            <span class="left">
+                                                {$finds.telephone}
+                                            </span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="contact_text">
+                                        <p class="left">
+                                            公司地址：
+                                        </p>
+                                            <span class="left">
+                                                {$finds.address}
+                                            </span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <!--<div class="contact_text">-->
+                                        <!--<p class="left">-->
+                                            <!--公司名称：-->
+                                        <!--</p>-->
+                                            <!--<span class="left">-->
+                                                <!--源发通风公司-->
+                                            <!--</span>-->
+                                        <!--<div class="clear"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="contact_text">-->
+                                        <!--<p class="left">-->
+                                            <!--联系人：-->
+                                        <!--</p>-->
+                                            <!--<span class="left">-->
+                                                <!--123456789-->
+                                            <!--</span>-->
+                                        <!--<div class="clear"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="contact_text">-->
+                                        <!--<p class="left">-->
+                                            <!--公司电话：-->
+                                        <!--</p>-->
+                                            <!--<span class="left">-->
+                                                <!--123456789-->
+                                            <!--</span>-->
+                                        <!--<div class="clear"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="contact_text">-->
+                                        <!--<p class="left">-->
+                                            <!--公司地址：-->
+                                        <!--</p>-->
+                                            <!--<span class="left">-->
+                                                <!--广东省东莞市南城区xxxxxx-->
+                                            <!--</span>-->
+                                        <!--<div class="clear"></div>-->
+                                    <!--</div>-->
+
+                                </div>
+                            </div>
+                            <div class="map" style="margin-top:2%;" id="baidumap">
+                                <div style="width:100%; height: 490px; font-size:12px" id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+    <!--        首页产品区域end-->
+    <!--        底部公共部分star-->
+    <include file="Public/foot" />
+    <!--        底部公共部分end-->
+</div>
+
+<script src="__PUBLIC__/Home/js/common.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.cn/api?v=2.0&ak=O62zG79hRl1FGwx8BO3jWTmmPaAuz7Ye"></script>
+<script src="__PUBLIC__/home/js/baidumap.js"></script>
+
+</body>
+
+</html>
